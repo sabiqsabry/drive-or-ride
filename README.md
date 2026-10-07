@@ -5,6 +5,8 @@
 Is it cheaper to drive there yourself, or take PickMe / Uber? Enter a route, your vehicle and the
 current fuel price, and see the comparison, adjusted for live traffic, time of day and weather.
 
+**Try it live: [sabiq.dev/tools/drive-or-ride](https://sabiq.dev/tools/drive-or-ride)**
+
 Sri Lanka first; the architecture is country-driven so other markets can be added as data.
 
 Built by **[Sabiq Sabry](https://sabiq.dev)** (novusian). Open source under the [MIT licence](LICENSE):
