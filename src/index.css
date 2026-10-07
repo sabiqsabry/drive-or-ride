@@ -15,7 +15,7 @@
   --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 -1px 0 rgba(0, 0, 0, 0.03) inset,
     0 20px 50px -20px rgba(30, 40, 90, 0.25), 0 2px 8px rgba(30, 40, 90, 0.06);
   --field: rgba(255, 255, 255, 0.55);
-  --popover: rgba(250, 251, 255, 0.94);
+  --popover: #fafbff;
   --field-focus: rgba(255, 255, 255, 0.9);
 
   --accent: #0a84ff;
@@ -46,13 +46,10 @@
     --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset,
       0 24px 60px -24px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.3);
     --field: rgba(255, 255, 255, 0.06);
-    --popover: rgba(30, 34, 46, 0.95);
+    --popover: #1e222e;
     --field-focus: rgba(255, 255, 255, 0.12);
     --green-ink: #4ade80;
     --red-ink: #ff6b61;
-}
-:root.liquid[data-theme='dark'] .glass:not(.suggest) {
-  background: rgba(10, 12, 18, 0.1);
 }
 
 /* ───────────── Base ───────────── */
@@ -115,27 +112,6 @@ button {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 38%),
     radial-gradient(120% 60% at 0% 0%, rgba(255, 255, 255, 0.25), transparent 60%);
   mix-blend-mode: overlay;
-}
-
-/* WebGL liquid glass: the canvas draws the page background, refraction, rim light and shadows.
-   DOM surfaces keep a faint tint so text stays legible during the frame the canvas lags a scroll. */
-.liquid-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-.liquid .glass:not(.suggest) {
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  border-color: transparent;
-  box-shadow: none;
-}
-.liquid .glass:not(.suggest)::before {
-  display: none;
 }
 
 /* ───────────── Layout ───────────── */

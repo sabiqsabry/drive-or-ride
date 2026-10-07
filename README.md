@@ -129,13 +129,12 @@ Parking, tolls and depreciation aren't included.
 
 ## Liquid Glass
 
-`src/components/LiquidBackdrop.tsx` adapts the refraction model from
-[dashersw/liquid-glass-js](https://github.com/dashersw/liquid-glass-js) (MIT). That library refracts
-a one-off html2canvas snapshot of the page per element. Here the background is procedural, so one
-full-screen WebGL pass draws it and refracts it under every `.glass` element each frame. The pass
-uses a rounded-rect SDF, edge and rim displacement along the surface normal, a tint gradient, a
-specular rim and soft shadows. It works with animations and scrolling, and needs no snapshots.
-Without WebGL, the CSS `backdrop-filter` glass is used instead.
+The UI follows Apple's Liquid Glass style, with ideas from
+[dashersw/liquid-glass-js](https://github.com/dashersw/liquid-glass-js) (MIT). Every `.glass` surface
+is drawn in CSS on the element itself: a translucent fill, `backdrop-filter` blur and saturation, a
+bright hairline edge, an inset top highlight, a specular sheen and a soft shadow, with matching
+tokens for light and dark themes. Because each surface is drawn by its own element, edges stay
+crisp and move in step with the content while scrolling or animating.
 
 ## Project layout
 
@@ -148,7 +147,7 @@ src/
   lib/estimate.ts     trip time, conditions, drive cost and ride fare models
   lib/contribute.ts   anonymous quote sharing (Firestore REST)
   lib/theme.ts        light/dark theme (light by default)
-  components/         UI: pickers, results, Liquid Glass backdrop, disclaimer
+  components/         UI: pickers, results, glass dropdown, theme toggle, disclaimer
 firestore.rules       write-only security rules for shared quotes
 PORTFOLIO_HOSTING.md  how this is hosted on sabiq.dev
 ```

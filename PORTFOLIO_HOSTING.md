@@ -133,6 +133,6 @@ rounded to about 1 km. There are no names, place names or device ids.
 - **Title:** Drive or Ride?
 - **One-liner:** Is it cheaper to drive there yourself or take PickMe / Uber? Fuel, live traffic and
   ride fares compared for Sri Lanka.
-- **Tags:** React, TypeScript, Vite, WebGL, Google Maps Platform, Firestore
-- **Highlights:** Liquid Glass UI rendered in a custom WebGL shader; traffic-aware routing; fare
+- **Tags:** React, TypeScript, Vite, Google Maps Platform, Firestore
+- **Highlights:** Apple-style Liquid Glass UI with light and dark themes; traffic-aware routing; fare
   model calibrated from real trips and improved by anonymous user quotes.

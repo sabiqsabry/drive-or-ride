@@ -3,7 +3,7 @@ import { useSyncExternalStore } from 'react'
 /**
  * Light/dark theme. `<html data-theme>` is the single source of truth: an inline script in
  * index.html sets it before first paint (saved choice, else light), and
- * everything - CSS, the WebGL glass, the Google map - follows that attribute.
+ * everything - CSS and the Google map - follows that attribute.
  */
 export type Theme = 'light' | 'dark'
 

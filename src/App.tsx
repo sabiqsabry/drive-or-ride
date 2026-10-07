@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Disclaimer } from './components/Disclaimer'
 import { GlassSelect } from './components/GlassSelect'
-import { LiquidBackdrop } from './components/LiquidBackdrop'
 import { Results } from './components/Results'
 import { ThemeToggle } from './components/ThemeToggle'
 import { PlaceInput } from './components/PlaceInput'
@@ -176,7 +175,6 @@ export default function App() {
 
   return (
     <div className="app">
-      <LiquidBackdrop />
       <ThemeToggle />
 
       <header className="topbar">
