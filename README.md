@@ -167,14 +167,3 @@ Issues and pull requests are welcome, especially for:
 - **New countries.** Add an entry to `COUNTRIES` with fuel prices, currency and local ride services.
 
 Please keep fares labelled as estimates and don't add scraping of PickMe, Uber or other apps.
-
-## Next steps
-
-- AI-assisted vehicle lookup: a small serverless endpoint that asks Claude (with web search) for
-  real-world km/L of an unlisted model, caches the result and flags it as AI-sourced. Needs an
-  Anthropic API key, kept server-side.
-- Automated CPC fuel-price updates (scheduled job → JSON).
-- Production geocoding and routing providers (see above), plus live traffic (Google/Mapbox).
-- Crowd-sourced fare calibration: anonymous "Got a quote?" submissions are already collected
-  (see above); the next step is a script that fits per-city tariffs from them.
-- Holiday / Poya day demand calendar for Sri Lanka.

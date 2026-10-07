@@ -1408,7 +1408,6 @@ fieldset {
 .disclaimer-card__lede {
   margin: 0 0 16px;
   font-size: 14px;
-  max-width: 70ch;
 }
 .disclaimer-card__grid {
   display: grid;
