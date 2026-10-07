@@ -25,6 +25,8 @@
   --red-ink: #d63a2f;
   --from: #30d158;
   --to: #ff375f;
+  --uber: #8e8e93;
+  --brand-tint: 22%;
 
   --r-lg: 28px;
   --r-md: 18px;
@@ -32,24 +34,35 @@
   --spring: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-/* Dark theme: <html data-theme> is set before first paint (saved choice, else system). */
+/* Dark theme: <html data-theme> is set before first paint (saved choice, else light).
+   Apple-style dark: neutral greys, raised surfaces that are nearly opaque (there's nothing
+   behind them worth blurring on a dark page), hairline edges instead of shadows, no sheen. */
 :root[data-theme='dark'] {
-    color-scheme: dark;
-    --bg: #07090f;
-    --text: #f5f7ff;
-    --text-2: rgba(245, 247, 255, 0.66);
-    --text-3: rgba(245, 247, 255, 0.4);
-    --hairline: rgba(255, 255, 255, 0.09);
-    --glass: rgba(28, 32, 44, 0.48);
-    --glass-strong: rgba(36, 40, 54, 0.7);
-    --glass-edge: rgba(255, 255, 255, 0.16);
-    --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset,
-      0 24px 60px -24px rgba(0, 0, 0, 0.7), 0 2px 8px rgba(0, 0, 0, 0.3);
-    --field: rgba(255, 255, 255, 0.06);
-    --popover: #1e222e;
-    --field-focus: rgba(255, 255, 255, 0.12);
-    --green-ink: #4ade80;
-    --red-ink: #ff6b61;
+  color-scheme: dark;
+  --bg: #09090b;
+  --text: #f4f4f5;
+  --text-2: rgba(244, 244, 245, 0.64);
+  --text-3: rgba(244, 244, 245, 0.4);
+  --hairline: rgba(255, 255, 255, 0.07);
+  --glass: rgba(24, 24, 27, 0.86);
+  --glass-strong: #2c2c30;
+  --glass-edge: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 24px 48px -24px rgba(0, 0, 0, 0.9);
+  --field: rgba(255, 255, 255, 0.045);
+  --field-focus: rgba(255, 255, 255, 0.08);
+  --popover: #1c1c1f;
+  --green-ink: #4ade80;
+  --red-ink: #ff6b61;
+  --tone-strength: 14%;
+  --uber: #b4b4ba;
+  --brand-tint: 12%;
+}
+/* The light theme's white sheen turns into grey haze on dark surfaces. */
+:root[data-theme='dark'] .glass::before {
+  display: none;
+}
+:root[data-theme='dark'] .skeleton::after {
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
 }
 
 /* ───────────── Base ───────────── */
@@ -720,7 +733,7 @@ fieldset {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--tone, var(--accent)) 28%, transparent), transparent 60%);
+  background: radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--tone, var(--accent)) var(--tone-strength, 28%), transparent), transparent 60%);
 }
 .verdict--drive {
   --tone: var(--green);
@@ -934,7 +947,7 @@ fieldset {
   display: grid;
   place-items: center;
   font-size: 20px;
-  background: color-mix(in srgb, var(--brand, var(--accent)) 22%, var(--glass-strong));
+  background: color-mix(in srgb, var(--brand, var(--accent)) var(--brand-tint), var(--glass-strong));
   border: 1px solid var(--glass-edge);
 }
 .bar__value {

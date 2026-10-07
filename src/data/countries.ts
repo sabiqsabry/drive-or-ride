@@ -58,7 +58,7 @@ export const COUNTRIES: Country[] = [
       {
         id: 'uber',
         name: 'Uber',
-        color: '#e5e5ea',
+        color: 'var(--uber)',
         appUrl: 'https://www.uber.com/lk/en/',
         deepLink: uberLink,
         categories: [
