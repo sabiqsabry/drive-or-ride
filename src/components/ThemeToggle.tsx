@@ -6,7 +6,8 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="theme-toggle glass"
+      className="theme-toggle glass enter"
+      style={{ '--d': '900ms' } as React.CSSProperties}
       onClick={() => setTheme(next)}
       aria-label={`Switch to ${next} mode`}
       title={`Switch to ${next} mode`}

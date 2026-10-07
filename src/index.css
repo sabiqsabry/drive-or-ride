@@ -713,6 +713,30 @@ fieldset {
   animation: rise 0.7s var(--spring) both;
   animation-delay: var(--d, 0ms);
 }
+/* Page load: sections fade up into place one after another (delays set inline as --d). */
+.enter,
+h1 .word {
+  /* backwards: hidden during the delay, then no lingering transform/filter once finished */
+  animation: enter 0.9s var(--spring) backwards;
+  animation-delay: var(--d, 0ms);
+}
+h1 .word {
+  display: inline-block;
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter,
+  h1 .word {
+    animation: none; /* show everything at once instead of hiding it during the delays */
+  }
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(8px);
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;

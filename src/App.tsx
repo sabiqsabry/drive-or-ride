@@ -177,7 +177,7 @@ export default function App() {
     <div className="app">
       <ThemeToggle />
 
-      <header className="topbar">
+      <header className="topbar enter" style={{ '--d': '0ms' } as React.CSSProperties}>
         <div className="brand">
           <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="28" height="28" />
           <span>Drive or Ride</span>
@@ -205,16 +205,19 @@ export default function App() {
 
       <main className="layout">
         <section className="intro">
-          <h1>
-            Drive <span className="or">or</span> ride?
+          <h1 aria-label="Drive or ride?">
+            {/* words land one after another on first load */}
+            <span className="word" style={{ '--d': '120ms' } as React.CSSProperties}>Drive</span>{' '}
+            <span className="word or" style={{ '--d': '220ms' } as React.CSSProperties}>or</span>{' '}
+            <span className="word" style={{ '--d': '320ms' } as React.CSSProperties}>ride?</span>
           </h1>
-          <p className="lede">
+          <p className="lede enter" style={{ '--d': '440ms' } as React.CSSProperties}>
             See what a trip really costs in your own vehicle versus {country.services.length ? country.services.map((s) => s.name).join(' or ') : 'a ride-hailing app'}
             {' '}- with fuel prices, traffic and time of day built in.
           </p>
         </section>
 
-        <form className="panel glass" onSubmit={(e) => e.preventDefault()}>
+        <form className="panel glass enter" style={{ '--d': '560ms' } as React.CSSProperties} onSubmit={(e) => e.preventDefault()}>
           <fieldset className="route-fields">
             <legend className="sr-only">Route</legend>
             <PlaceInput label="From" placeholder="Starting point" value={from} onChange={setFrom} country={country} tone="from" allowLocate />
@@ -362,7 +365,7 @@ export default function App() {
           </div>
         </form>
 
-        <div className="output">
+        <div className="output enter" style={{ '--d': '680ms' } as React.CSSProperties}>
           {routeError && <div className="card glass notice">⚠️ {routeError}</div>}
           {!routeError && missing && !loading && (
             <div className="card glass empty">
